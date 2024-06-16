@@ -1,0 +1,17 @@
+public class Factorial {
+    public static void main(String[] args) {
+        int number = 5; // Example number
+        long factorial = factorialRecursive(number);
+        System.out.println("Factorial of " + number + " using recursive method is: " + factorial);
+    }
+
+    public static long factorialRecursive(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Number must be non-negative.");
+        }
+        if (n == 0) {
+            return 1;
+        }
+        return n * factorialRecursive(n - 1);
+    }
+}
