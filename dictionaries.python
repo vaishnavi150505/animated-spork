@@ -1,0 +1,20 @@
+# Creating a dictionary
+student = {
+    "name": "John",
+    "age": 25,
+    "courses": ["Math", "CompSci"]
+}
+
+# Accessing values
+print(student["name"])
+print(student["courses"])
+
+# Adding a key-value pair
+student["grade"] = "A"
+
+# Removing a key-value pair
+del student["age"]
+
+# Looping through a dictionary
+for key, value in student.items():
+    print(key, value)
