@@ -1,0 +1,14 @@
+fruits = ["apple", "banana", "cherry"]
+
+# Adding an element
+fruits.append("orange")
+
+# Removing an element
+fruits.remove("banana")
+
+# Accessing elements
+print(fruits[0])
+
+# Looping through a list
+for fruit in fruits:
+    print(fruit)
