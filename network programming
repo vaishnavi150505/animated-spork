@@ -1,0 +1,23 @@
+import java.io.*;
+import java.net.*;
+
+public class SimpleServer {
+    public static void main(String[] args) {
+        try (ServerSocket serverSocket = new ServerSocket(6666)) {
+            System.out.println("Server is listening on port 6666");
+            Socket socket = serverSocket.accept();
+            System.out.println("Client connected");
+
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+
+            String message = dis.readUTF();
+            System.out.println("Received from client: " + message);
+
+            dos.writeUTF("Hello, client!");
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
