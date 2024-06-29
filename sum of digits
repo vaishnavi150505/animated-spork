@@ -1,0 +1,18 @@
+public class SumOfDigits {
+
+    // Recursive method to find the sum of digits of a number
+    public static int sumOfDigits(int n) {
+        // Base case: if n is 0
+        if (n == 0) {
+            return 0;
+        }
+        // Recursive case: sum of last digit and sum of digits of the rest of the number
+        return n % 10 + sumOfDigits(n / 10);
+    }
+
+    public static void main(String[] args) {
+        int number = 12345; // Change this to test with other numbers
+        int result = sumOfDigits(number);
+        System.out.println("Sum of digits of " + number + " is: " + result);
+    }
+}
