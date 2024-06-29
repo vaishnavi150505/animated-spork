@@ -1,0 +1,18 @@
+public class ReverseString {
+
+    // Recursive method to reverse a string
+    public static String reverse(String str) {
+        // Base case: if the string is empty or has only one character
+        if (str.isEmpty()) {
+            return str;
+        }
+        // Recursive case: get the last character and concatenate it with the reverse of the rest of the string
+        return reverse(str.substring(1)) + str.charAt(0);
+    }
+
+    public static void main(String[] args) {
+        String input = "Hello, World!";
+        String result = reverse(input);
+        System.out.println("Reversed string: " + result);
+    }
+}
