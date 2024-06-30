@@ -1,0 +1,18 @@
+public class DecimalToBinary {
+
+    // Recursive method to convert decimal to binary
+    public static String decimalToBinary(int n) {
+        // Base case: if n is 0, return empty string
+        if (n == 0) {
+            return "";
+        }
+        // Recursive case: concatenate the remainder of n divided by 2 with the result of the quotient
+        return decimalToBinary(n / 2) + (n % 2);
+    }
+
+    public static void main(String[] args) {
+        int number = 10;
+        String result = decimalToBinary(number);
+        System.out.println("Binary representation of " + number + " is: " + result);
+    }
+}
