@@ -1,0 +1,20 @@
+public class CountOccurrences {
+
+    // Recursive method to count occurrences of a character in a string
+    public static int countOccurrences(String str, char ch) {
+        // Base case: if the string is empty, return 0
+        if (str.isEmpty()) {
+            return 0;
+        }
+        // Recursive case: check the first character and the rest of the string
+        int count = (str.charAt(0) == ch) ? 1 : 0;
+        return count + countOccurrences(str.substring(1), ch);
+    }
+
+    public static void main(String[] args) {
+        String input = "hello world";
+        char ch = 'l';
+        int result = countOccurrences(input, ch);
+        System.out.println("Occurrences of '" + ch + "' in \"" + input + "\" is: " + result);
+    }
+}
