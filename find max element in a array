@@ -1,0 +1,18 @@
+public class FindMax {
+
+    // Recursive method to find maximum element in an array
+    public static int findMax(int[] array, int n) {
+        // Base case: if the array has one element, return it
+        if (n == 1) {
+            return array[0];
+        }
+        // Recursive case: compare the last element with the maximum of the rest of the array
+        return Math.max(array[n - 1], findMax(array, n - 1));
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 4, 3, -1, 8, 7};
+        int result = findMax(array, array.length);
+        System.out.println("Maximum element in the array is: " + result);
+    }
+}
