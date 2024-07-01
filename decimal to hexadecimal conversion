@@ -1,0 +1,20 @@
+public class DecimalToHexadecimal {
+
+    // Recursive method to convert a decimal number to hexadecimal
+    public static String decimalToHex(int n) {
+        // Base case: if n is 0, return empty string
+        if (n == 0) {
+            return "";
+        }
+        // Array of hexadecimal characters
+        char[] hexChars = "0123456789ABCDEF".toCharArray();
+        // Recursive case: concatenate the remainder with the result of the quotient
+        return decimalToHex(n / 16) + hexChars[n % 16];
+    }
+
+    public static void main(String[] args) {
+        int number = 255;
+        String result = decimalToHex(number);
+        System.out.println("Hexadecimal representation of " + number + " is: " + result);
+    }
+}
