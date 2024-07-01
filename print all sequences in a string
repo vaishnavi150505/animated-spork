@@ -1,0 +1,20 @@
+public class Subsequences {
+
+    // Recursive method to print all subsequences of a string
+    public static void printSubsequences(String str, String current, int index) {
+        // Base case: if the index is equal to the length of the string, print the current subsequence
+        if (index == str.length()) {
+            System.out.println(current);
+            return;
+        }
+        // Recursive case: exclude the current character
+        printSubsequences(str, current, index + 1);
+        // Recursive case: include the current character
+        printSubsequences(str, current + str.charAt(index), index + 1);
+    }
+
+    public static void main(String[] args) {
+        String input = "abc";
+        printSubsequences(input, "", 0);
+    }
+}
