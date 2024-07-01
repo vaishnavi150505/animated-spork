@@ -1,0 +1,26 @@
+public class PrimeCheck {
+
+    // Recursive method to check if a number is prime
+    public static boolean isPrime(int n, int i) {
+        // Base case: if n is less than 2, it's not a prime number
+        if (n < 2) {
+            return false;
+        }
+        // Base case: if i squared is greater than n, n is prime
+        if (i * i > n) {
+            return true;
+        }
+        // Base case: if n is divisible by i, it's not a prime number
+        if (n % i == 0) {
+            return false;
+        }
+        // Recursive case: check the next divisor
+        return isPrime(n, i + 1);
+    }
+
+    public static void main(String[] args) {
+        int number = 29;
+        boolean result = isPrime(number, 2);
+        System.out.println("Is " + number + " a prime number? " + result);
+    }
+}
