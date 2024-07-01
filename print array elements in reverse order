@@ -1,0 +1,20 @@
+public class ReverseArray {
+
+    // Recursive method to print array elements in reverse order
+    public static void printReverse(int[] array, int n) {
+        // Base case: if the array is empty, return
+        if (n == 0) {
+            return;
+        }
+        // Print the last element
+        System.out.print(array[n - 1] + " ");
+        // Recursive case: print the rest of the array in reverse order
+        printReverse(array, n - 1);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        System.out.print("Array elements in reverse order: ");
+        printReverse(array, array.length);
+    }
+}
