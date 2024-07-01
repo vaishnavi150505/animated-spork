@@ -1,0 +1,18 @@
+public class ProductOfArray {
+
+    // Recursive method to calculate the product of array elements
+    public static int productOfArray(int[] array, int n) {
+        // Base case: if the array length is 0, return 1 (multiplicative identity)
+        if (n == 0) {
+            return 1;
+        }
+        // Recursive case: multiply the last element with the product of the rest of the array
+        return array[n - 1] * productOfArray(array, n - 1);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int result = productOfArray(array, array.length);
+        System.out.println("Product of array elements is: " + result);
+    }
+}
