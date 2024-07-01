@@ -1,0 +1,18 @@
+public class StringLength {
+
+    // Recursive method to calculate the length of a string
+    public static int length(String str) {
+        // Base case: if the string is empty, return 0
+        if (str.isEmpty()) {
+            return 0;
+        }
+        // Recursive case: 1 + length of the rest of the string
+        return 1 + length(str.substring(1));
+    }
+
+    public static void main(String[] args) {
+        String input = "Hello, World!";
+        int result = length(input);
+        System.out.println("Length of the string \"" + input + "\" is: " + result);
+    }
+}
