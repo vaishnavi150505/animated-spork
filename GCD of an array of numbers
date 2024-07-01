@@ -1,0 +1,26 @@
+public class GCDArray {
+
+    // Recursive method to find GCD of two numbers
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+
+    // Recursive method to find GCD of an array of numbers
+    public static int gcdArray(int[] array, int n) {
+        // Base case: if the array has one element, return it
+        if (n == 1) {
+            return array[0];
+        }
+        // Recursive case: find GCD of the last element and the GCD of the rest of the array
+        return gcd(array[n - 1], gcdArray(array, n - 1));
+    }
+
+    public static void main(String[] args) {
+        int[] array = {48, 18, 30, 12};
+        int result = gcdArray(array, array.length);
+        System.out.println("GCD of the array is: " + result);
+    }
+}
