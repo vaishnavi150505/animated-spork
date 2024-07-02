@@ -1,0 +1,40 @@
+public class NQueens {
+
+    // Method to print the solution
+    public static void printSolution(int[][] board) {
+        for (int[] row : board) {
+            for (int cell : row) {
+                System.out.print(cell + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Recursive method to solve the N-Queens problem
+    public static boolean solveNQueens(int[][] board, int row) {
+        // Base case: if all queens are placed
+        if (row >= board.length) {
+            return true;
+        }
+
+        // Place a queen in each column and check if it leads to a solution
+        for (int col = 0; col < board.length; col++) {
+            if (isSafe(board, row, col)) {
+                board[row][col] = 1; // Place the queen
+                // Recur to place the rest of the queens
+                if (solveNQueens(board, row + 1)) {
+                    return true;
+                }
+                // If placing queen in this column doesn't lead to a solution, remove it
+                board[row][col] = 0;
+            }
+        }
+        // If no column leads to a solution, return false
+        return false;
+    }
+
+    // Helper method to check if it's safe to place a queen at board[row][col]
+    public static boolean isSafe(int[][] board, int row, int col) {
+        int i, j;
+        // Check this column on the upper side
+        for (i = 0; i
