@@ -1,0 +1,22 @@
+public class DigitsOnly {
+
+    // Recursive method to check if a string contains only digits
+    public static boolean isDigitsOnly(String str) {
+        // Base case: if the string is empty, return true
+        if (str.isEmpty()) {
+            return true;
+        }
+        // Check if the first character is a digit
+        if (!Character.isDigit(str.charAt(0))) {
+            return false;
+        }
+        // Recursive case: check the rest of the string
+        return isDigitsOnly(str.substring(1));
+    }
+
+    public static void main(String[] args) {
+        String input = "123456";
+        boolean result = isDigitsOnly(input);
+        System.out.println("Does \"" + input + "\" contain only digits? " + result);
+    }
+}
