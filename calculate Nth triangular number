@@ -1,0 +1,18 @@
+public class TriangularNumber {
+
+    // Recursive method to calculate the Nth triangular number
+    public static int triangularNumber(int n) {
+        // Base case: if n is 0
+        if (n == 0) {
+            return 0;
+        }
+        // Recursive case: n + triangular number of (n-1)
+        return n + triangularNumber(n - 1);
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        int result = triangularNumber(n);
+        System.out.println("The " + n + "th triangular number is: " + result);
+    }
+}
