@@ -1,0 +1,21 @@
+public class TowerOfHanoi {
+
+    // Recursive method to solve Tower of Hanoi puzzle
+    public static void towerOfHanoi(int n, char fromRod, char toRod, char auxRod) {
+        // Base case: if there is only one disk
+        if (n == 1) {
+            System.out.println("Move disk 1 from rod " + fromRod + " to rod " + toRod);
+            return;
+        }
+        // Recursive case: move n-1 disks from fromRod to auxRod
+        towerOfHanoi(n - 1, fromRod, auxRod, toRod);
+        System.out.println("Move disk " + n + " from rod " + fromRod + " to rod " + toRod);
+        // Move n-1 disks from auxRod to toRod
+        towerOfHanoi(n - 1, auxRod, toRod, fromRod);
+    }
+
+    public static void main(String[] args) {
+        int n = 3; // Number of disks
+        towerOfHanoi(n, 'A', 'C', 'B'); // A, B, and C are names of rods
+    }
+}
