@@ -1,0 +1,21 @@
+public class ArraySortedCheck {
+
+    // Recursive method to check if an array is sorted
+    public static boolean isSorted(int[] array, int index) {
+        // Base case: if the array has one or no element
+        if (index == array.length - 1) {
+            return true;
+        }
+        // Recursive case: check if the current element is less than the next element
+        if (array[index] > array[index + 1]) {
+            return false;
+        }
+        return isSorted(array, index + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        boolean result = isSorted(array, 0);
+        System.out.println("Is the array sorted? " + result);
+    }
+}
