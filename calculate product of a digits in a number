@@ -1,0 +1,18 @@
+public class ProductOfDigits {
+
+    // Recursive method to calculate the product of digits of a number
+    public static int productOfDigits(int n) {
+        // Base case: if the number is 0
+        if (n == 0) {
+            return 1;
+        }
+        // Recursive case: product of last digit and product of remaining digits
+        return (n % 10) * productOfDigits(n / 10);
+    }
+
+    public static void main(String[] args) {
+        int number = 12345;
+        int result = productOfDigits(number);
+        System.out.println("Product of digits of " + number + " is: " + result);
+    }
+}
