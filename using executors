@@ -1,0 +1,30 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class MyTask implements Runnable {
+    private String taskName;
+
+    MyTask(String name) {
+        taskName = name;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(taskName + ": " + i);
+            try {
+                Thread.sleep(500); // Pause for 500 milliseconds
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        executor.execute(new MyTask("Task 1"));
+        executor.execute(new MyTask("Task 2"));
+
+        executor.shutdown();
+    }
+}
