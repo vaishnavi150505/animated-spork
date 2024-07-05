@@ -1,0 +1,43 @@
+import java.util.concurrent.locks.ReentrantLock;
+
+class SharedResource {
+    private ReentrantLock lock = new ReentrantLock();
+
+    public void accessResource(String threadName) {
+        lock.lock();
+        try {
+            System.out.println(threadName + " is accessing the resource");
+            Thread.sleep(1000); // Simulate resource access
+            System.out.println(threadName + " is done accessing the resource");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+
+class MyThread extends Thread {
+    private SharedResource resource;
+
+    MyThread(SharedResource resource, String name) {
+        super(name);
+        this.resource = resource;
+    }
+
+    public void run() {
+        resource.accessResource(Thread.currentThread().getName());
+    }
+
+    public static void main(String[] args) {
+        SharedResource resource = new SharedResource();
+
+        MyThread t1 = new MyThread(resource, "Thread-1");
+        MyThread t2 = new MyThread(resource, "Thread-2");
+        MyThread t3 = new MyThread(resource, "Thread-3");
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
