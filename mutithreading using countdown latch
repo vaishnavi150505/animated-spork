@@ -1,0 +1,41 @@
+import java.util.concurrent.CountDownLatch;
+
+class Worker extends Thread {
+    private int delay;
+    private CountDownLatch latch;
+
+    Worker(int delay, CountDownLatch latch, String name) {
+        super(name);
+        this.delay = delay;
+        this.latch = latch;
+    }
+
+    public void run() {
+        try {
+            Thread.sleep(delay);
+            System.out.println(Thread.currentThread().getName() + " finished work");
+            latch.countDown(); // Reduce count of latch by 1
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        CountDownLatch latch = new CountDownLatch(3);
+
+        Worker worker1 = new Worker(1000, latch, "Worker-1");
+        Worker worker2 = new Worker(2000, latch, "Worker-2");
+        Worker worker3 = new Worker(3000, latch, "Worker-3");
+
+        worker1.start();
+        worker2.start();
+        worker3.start();
+
+        try {
+            latch.await(); // Main thread waits until latch count is zero
+            System.out.println("All workers finished their tasks");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
