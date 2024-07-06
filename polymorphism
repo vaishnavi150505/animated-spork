@@ -1,0 +1,34 @@
+// Define a base class called Shape
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape.");
+    }
+}
+
+// Define a derived class called Circle that extends Shape
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+// Define a derived class called Rectangle that extends Shape
+class Rectangle extends Shape {
+    void draw() {
+        System.out.println("Drawing a rectangle.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create objects of Shape, Circle, and Rectangle
+        Shape shape = new Shape();
+        Shape circle = new Circle();
+        Shape rectangle = new Rectangle();
+
+        // Call the draw method on different objects
+        shape.draw();
+        circle.draw();
+        rectangle.draw();
+    }
+}
