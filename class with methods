@@ -1,0 +1,40 @@
+// Define a class called Calculator
+class Calculator {
+    // Method to add two numbers
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to subtract two numbers
+    int subtract(int a, int b) {
+        return a - b;
+    }
+
+    // Method to multiply two numbers
+    int multiply(int a, int b) {
+        return a * b;
+    }
+
+    // Method to divide two numbers
+    double divide(int a, int b) {
+        if (b != 0) {
+            return (double) a / b;
+        } else {
+            System.out.println("Division by zero is not allowed.");
+            return 0;
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Calculator class
+        Calculator calc = new Calculator();
+
+        // Call methods of the Calculator class
+        System.out.println("Addition: " + calc.add(10, 5));
+        System.out.println("Subtraction: " + calc.subtract(10, 5));
+        System.out.println("Multiplication: " + calc.multiply(10, 5));
+        System.out.println("Division: " + calc.divide(10, 5));
+    }
+}
