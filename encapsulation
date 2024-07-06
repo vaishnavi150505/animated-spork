@@ -1,0 +1,56 @@
+// Define a class called BankAccount
+class BankAccount {
+    // Private variables to achieve encapsulation
+    private String accountNumber;
+    private double balance;
+
+    // Constructor to initialize the BankAccount object
+    BankAccount(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    // Getter method for account number
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    // Getter method for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient funds or invalid amount.");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the BankAccount class
+        BankAccount account = new BankAccount("123456789", 1000.0);
+
+        // Deposit money
+        account.deposit(500.0);
+        System.out.println("Account Balance: " + account.getBalance());
+
+        // Withdraw money
+        account.withdraw(300.0);
+        System.out.println("Account Balance: " + account.getBalance());
+
+        // Attempt to withdraw more than balance
+        account.withdraw(1500.0);
+    }
+}
