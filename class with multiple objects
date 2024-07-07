@@ -1,0 +1,25 @@
+class Person {
+    String name;
+    int age;
+    
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create multiple objects
+        Person person1 = new Person("Alice", 30);
+        Person person2 = new Person("Bob", 25);
+        
+        // Display their details
+        person1.display();
+        person2.display();
+    }
+}
