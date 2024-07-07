@@ -1,0 +1,41 @@
+interface Animal {
+    void eat();
+    void makeSound();
+}
+
+class Dog implements Animal {
+    @Override
+    public void eat() {
+        System.out.println("Dog eats bone");
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat implements Animal {
+    @Override
+    public void eat() {
+        System.out.println("Cat eats fish");
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+        
+        myDog.eat();
+        myDog.makeSound();
+        
+        myCat.eat();
+        myCat.makeSound();
+    }
+}
