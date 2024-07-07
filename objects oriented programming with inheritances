@@ -1,0 +1,41 @@
+// Base class
+class Person {
+    String name;
+    int age;
+    
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+// Derived class
+class Student extends Person {
+    String studentId;
+    
+    Student(String name, int age, String studentId) {
+        super(name, age);
+        this.studentId = studentId;
+    }
+    
+    // Overriding the display method
+    @Override
+    void display() {
+        super.display();
+        System.out.println("Student ID: " + studentId);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Student class
+        Student student = new Student("Bob", 20, "S12345");
+        
+        // Display the student details
+        student.display();
+    }
+}
