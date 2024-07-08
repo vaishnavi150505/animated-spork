@@ -1,0 +1,55 @@
+abstract class Shape {
+    String color;
+    
+    // Abstract method
+    abstract double area();
+    
+    // Concrete method
+    public String getColor() {
+        return color;
+    }
+    
+    public Shape(String color) {
+        this.color = color;
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+    
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+    
+    @Override
+    double area() {
+        return Math.PI * Math.pow(radius, 2);
+    }
+}
+
+class Rectangle extends Shape {
+    double length;
+    double width;
+    
+    public Rectangle(String color, double length, double width) {
+        super(color);
+        this.length = length;
+        this.width = width;
+    }
+    
+    @Override
+    double area() {
+        return length * width;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle("Red", 5);
+        Shape rectangle = new Rectangle("Blue", 4, 5);
+        
+        System.out.println("Circle color: " + circle.getColor());
+        System.out.println("Circle area: " + circle.area());
+        
+        
