@@ -1,0 +1,42 @@
+enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+}
+
+class Schedule {
+    Day day;
+    
+    public Schedule(Day day) {
+        this.day = day;
+    }
+    
+    public void tellItLikeItIs() {
+        switch (day) {
+            case MONDAY:
+                System.out.println("Mondays are bad.");
+                break;
+            case FRIDAY:
+                System.out.println("Fridays are better.");
+                break;
+            case SATURDAY:
+            case SUNDAY:
+                System.out.println("Weekends are best.");
+                break;
+            default:
+                System.out.println("Midweek days are so-so.");
+                break;
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Schedule schedule = new Schedule(Day.MONDAY);
+        schedule.tellItLikeItIs();
+        
+        schedule = new Schedule(Day.FRIDAY);
+        schedule.tellItLikeItIs();
+        
+        schedule = new Schedule(Day.SUNDAY);
+        schedule.tellItLikeItIs();
+    }
+}
