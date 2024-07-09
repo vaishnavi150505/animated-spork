@@ -1,0 +1,23 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eve");
+        
+        // Convert all names to uppercase using streams
+        List<String> upperCaseNames = names.stream()
+                                           .map(String::toUpperCase)
+                                           .collect(Collectors.toList());
+        
+        upperCaseNames.forEach(System.out::println);
+        
+        // Filter names that start with 'A'
+        List<String> namesStartingWithA = names.stream()
+                                               .filter(name -> name.startsWith("A"))
+                                               .collect(Collectors.toList());
+        
+        namesStartingWithA.forEach(System.out::println);
+    }
+}
