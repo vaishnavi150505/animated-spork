@@ -1,0 +1,15 @@
+# Integer
+a = 5
+print(a)
+
+# Float
+b = 4.5
+print(b)
+
+# String
+c = "Hello"
+print(c)
+
+# Boolean
+d = True
+print(d)
