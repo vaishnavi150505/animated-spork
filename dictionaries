@@ -1,0 +1,13 @@
+my_dict = {"name": "Alice", "age": 25}
+print(my_dict)
+
+# Accessing elements
+print(my_dict["name"])
+
+# Adding elements
+my_dict["city"] = "New York"
+print(my_dict)
+
+# Removing elements
+del my_dict["age"]
+print(my_dict)
