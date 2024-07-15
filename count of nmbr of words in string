@@ -1,0 +1,6 @@
+def count_words(s):
+    words = s.split()
+    return len(words)
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print(count_words(sentence))
