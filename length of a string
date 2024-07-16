@@ -1,0 +1,5 @@
+def string_length(s):
+    return len(s)
+
+text = "Hello, World!"
+print(f"The length of the string is {string_length(text)}")
