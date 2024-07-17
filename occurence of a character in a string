@@ -1,0 +1,6 @@
+def count_character(s, char):
+    return s.count(char)
+
+text = "hello world"
+character = 'o'
+print(f"The character '{character}' appears {count_character(text, character)} times.")
