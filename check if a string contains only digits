@@ -1,0 +1,7 @@
+def is_all_digits(s):
+    return s.isdigit()
+
+text1 = "12345"
+text2 = "12a45"
+print(f"'{text1}' contains only digits: {is_all_digits(text1)}")
+print(f"'{text2}' contains only digits: {is_all_digits(text2)}")
